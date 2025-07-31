@@ -1,0 +1,9 @@
+
+[
+  {
+    "id": 1,
+    "nombre": "Tortilla de patatas",
+    "ingredientes": ["patatas", "huevos", "cebolla"],
+    "tiempo": "30 min"
+  }
+]
