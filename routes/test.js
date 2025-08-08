@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const sql = require('../db/neonClient');
+const verificarToken = require('../middlewares/verificarToken');
 
-router.get('/', async (req, res) => {
+router.get('/', verificarToken, async (req, res) => {
   console.log('Petición recibida en la ruta /test');
   try {
     console.log('Conectando a la base de datos...');
