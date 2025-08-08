@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   console.log('Petición recibida en la ruta /test');
   try {
     console.log('Conectando a la base de datos...');
-    const result = await sql`SELECT * FROM userss`;
+    const result = await sql`SELECT * FROM users`;
 
     // Si quieres mostrar todos los usuarios:
     res.status(200).json(result);
