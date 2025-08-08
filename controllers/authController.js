@@ -1,7 +1,10 @@
 const jwt = require('jsonwebtoken');
-const usuarios = require('../data/usuarios.json');
-const { claveSecreta } = require('../config/jwt');
+//const usuarios = require('../data/usuarios.json');
+//const { claveSecreta } = require('../config/jwt');
 
+
+const dotenv = require('dotenv');
+dotenv.config();
 const login = (req, res) => {
 
   console.log('Petición recibida la info es:', req.body);
@@ -17,7 +20,7 @@ const login = (req, res) => {
     return res.status(401).json({ mensaje: 'Credenciales incorrectas' });
   }
 
-  const token = jwt.sign({ usuario: encontrado.usuario }, claveSecreta, { expiresIn: '2h' });
+  const token = jwt.sign({ usuario: encontrado.usuario }, process.env.JWT_SECRET, { expiresIn: '2h' });
   res.json({ token });
 };
 
