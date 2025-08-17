@@ -24,7 +24,7 @@ router.get('/:id', verificarToken, async (req, res) => {
 });
 
 // Agregar usuario
-router.post('/', verificarToken, validarUsuario, async (req, res) => {
+router.post('/', validarUsuario, async (req, res) => {
   const errores = validationResult(req);
   if (!errores.isEmpty()) return res.status(400).json({ errores: errores.array() });
 
