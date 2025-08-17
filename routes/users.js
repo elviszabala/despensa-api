@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const sql = require('../db/neonClient');
 const { body, validationResult } = require('express-validator');
-const verificarToken = require('../middleware/verificarToken');
+const verificarToken = require('../middlewares/verificarToken');
 
 const validarUsuario = [
   body('nombre').notEmpty().withMessage('Nombre obligatorio'),
