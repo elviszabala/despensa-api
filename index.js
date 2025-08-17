@@ -4,6 +4,7 @@ const recetasRoutes = require('./routes/recetas');
 const authRoutes = require('./routes/auth');
 const testRoutes = require('./routes/test');
 const itemsRoutes = require('./routes/items');
+const usersRoutes = require('./routes/users');
 const rateLimiter = require('./middlewares/rateLimiter');
 const router = express.Router();
 const morgan = require('morgan');
@@ -45,6 +46,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/recetas', recetasRoutes);
 app.use('/api/test', testRoutes);
 app.use('/api/items', itemsRoutes);
+app.use('/api/users', usersRoutes);
 
 app.listen(8000, () => {
   console.log('Servidor corriendo en puerto 8000');
