@@ -8,7 +8,7 @@ const usersRoutes = require('./routes/users');
 const rateLimiter = require('./middlewares/rateLimiter');
 const router = express.Router();
 const morgan = require('morgan');
-const pool = require('./db/neonClient') // Importar el cliente de la base de datos
+//const pool = require('./db/neonClient') // Importar el cliente de la base de datos
 const dotenv = require('dotenv');// Importar dotenv para manejar variables de entorno
 dotenv.config(); // Cargar variables de entorno desde .env
 
